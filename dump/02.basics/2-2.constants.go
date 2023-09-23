@@ -1,29 +1,30 @@
 package main
 
-import "fmt"
-
-// Declare two individual constants. Yes,
-// non-ASCII letters can be used in identifiers.
-const π = 3.1416
-const Pi = π // <=> const Pi = 3.1416
-
-// Declare multiple constants in a group.
-const (
-	No         = !Yes
-	Yes        = true
-	MaxDegrees = 360
-	Unit       = "radian"
-)
-
-// ? This should not work but it's working
-// ! Contants are resolved during compile time.
-const Hola = !Como
-const Como = true
-
 func main() {
-	fmt.Println(No, Yes);
-	fmt.Println(Hola, Como);
-	// Declare multiple constants in one line.
-	const TwoPi, HalfPi, Unit2 = π * 2, π * 0.5, "degree"
-	fmt.Println(TwoPi);
+	const (
+
+		m float32 = iota + .5 // m float32 = 1 + .5
+		n                     // n float32 = 2 + .5
+
+		p = 9             // now, iota == 3
+		q = iota * 2      // q = 4 * 2
+		_                 // _ = 5 * 2
+		r                 // r = 6 * 2
+		s, t = iota, iota // s, t = 7, 7
+		u, v;              // u, v = 8, 8
+		_, w              // _, w = 9, 9
+	)
+
+	const x = iota // x = 0
+	const xx= iota
+	const (
+		y = iota // y = 0
+		z        // z = 1
+	)
+
+	println(m)             // +1.500000e+000
+	println(n)             // +2.500000e+000
+	println(q, r)          // 8 12
+	println(s, t, u, v, w) // 7 7 8 8 9
+	println(x, xx, y, z)       // 0 0 1
 }

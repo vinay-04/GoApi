@@ -29,11 +29,11 @@ func StatRandomNumbers(n int) (int, int) {
 
 // "main" function is the entry function of a program.
 
-func main() {
-	var num = 100
-	// Call the declared StatRandomNumbers function.
-	x, y := StatRandomNumbers(100) 
-	// Call two built-in functions (print and println).
-	println("Result: ", x, " + ", y)
-	println(x+y == num)
-}
+// func main() {
+// 	var num = 100
+// 	// Call the declared StatRandomNumbers function.
+// 	x, y := StatRandomNumbers(100) 
+// 	// Call two built-in functions (print and println).
+// 	println("Result: ", x, " + ", y)
+// 	println(x+y == num)
+// }
